@@ -1,6 +1,7 @@
 Vagrant::Config.run do |config|
   config.vm.define :lucid do |web_config|
     web_config.vm.box = "lucid32"
+    web_config.vm.forward_port 80,8888
       web_config.vm.provision :chef_client do |chef|
         chef.chef_server_url = "https://api.opscode.com/organizations/linbynd"
         chef.validation_key_path = "./.chef/linbynd-validator.pem"
@@ -15,6 +16,7 @@ Vagrant::Config.run do |config|
 
   config.vm.define :Centos6 do |cent_config|
     cent_config.vm.box = "Centos6"
+    cent_config.vm.forward_port 80, 8888
       cent_config.vm.provision :chef_client do |chef|
         chef.chef_server_url = "https://api.opscode.com/organizations/linbynd"
         chef.validation_key_path = "./.chef/linbynd-validator.pem"
