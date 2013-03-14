@@ -17,7 +17,7 @@ Vagrant::Config.run do |config|
         chef.chef_server_url = "https://api.opscode.com/organizations/linbynd"
         chef.validation_key_path = "./.chef/linbynd-validator.pem"
         chef.validation_client_name = "linbynd-validator"
-        chef.node_name = "ubu_vagrantvm"
+        chef.node_name = "vagrant-ubuntu-precise-32"
     end
   end
 
