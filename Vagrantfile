@@ -1,4 +1,3 @@
-#Adding ssh passphrase
 Vagrant::Config.run do |config|
   config.vm.define :lucid do |web_config|
     web_config.vm.box = "lucid32"
