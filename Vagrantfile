@@ -23,7 +23,7 @@ Vagrant::Config.run do |config|
 
   config.vm.define :Centos6 do |cent_config|
     cent_config.vm.box = "Centos6"
-    cent_config.vm.network :bridged
+#    cent_config.vm.network :bridged
     cent_config.vm.forward_port 80, 8888
       cent_config.vm.provision :chef_client do |chef|
         chef.chef_server_url = "https://api.opscode.com/organizations/linbynd"
