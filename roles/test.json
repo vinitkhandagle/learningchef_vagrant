@@ -1,0 +1,15 @@
+{
+  "override_attributes": {
+  },
+  "default_attributes": {
+  },
+  "json_class": "Chef::Role",
+  "description": "",
+  "run_list": [
+    "recipe[apache2]"
+  ],
+  "env_run_lists": {
+  },
+  "name": "test",
+  "chef_type": "role"
+}
