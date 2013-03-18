@@ -22,13 +22,13 @@ Vagrant::Config.run do |config|
     end
   end
 
-  config.vm.define :ansiarch do |ansi_config|
-    ansi_config.vm.box = "Arch64"
+  config.vm.define :ansiubu do |ansi_config|
+    ansi_config.vm.box = "lucid32"
     ansi_config.vm.network :bridged, ip: "192.168.1.7"
-    ansi_config.vm.host_name = "ansiarch"
+    ansi_config.vm.host_name = "ansiubu"
     ansi_config.vm.provision :ansible do |ansible|
         ansible.playbook = "setup-ansiarch.yml"
-        ansible.hosts = "ansiarch"
+        ansible.hosts = "ansiubu"
     end
   end
 

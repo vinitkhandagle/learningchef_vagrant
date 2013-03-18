@@ -1,6 +1,6 @@
 ---
 ## A Arch linux test
-- hosts: ansiarch
+- hosts: ansiubu
   user: vagrant
   sudo: True
 
