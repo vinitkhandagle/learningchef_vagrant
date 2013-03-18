@@ -7,3 +7,7 @@
   tasks:
    - name: show the hostname
      action: command hostname
+  
+  tasks:
+   - name: show the Disk Space
+     action: command df -kh
