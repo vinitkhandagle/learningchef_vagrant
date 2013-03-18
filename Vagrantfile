@@ -24,6 +24,7 @@ Vagrant::Config.run do |config|
 
   config.vm.define :ansiarch do |ansi_config|
     ansi_config.vm.box = "Arch64"
+    ansi_config.vm.network :bridged, ip: "192.168.1.7"
     ansi_config.vm.host_name = "ansiarch"
     ansi_config.vm.provision :ansible do |ansible|
         ansible.playbook = "setup-ansiarch.yml"
