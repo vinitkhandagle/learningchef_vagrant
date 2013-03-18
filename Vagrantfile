@@ -22,6 +22,15 @@ Vagrant::Config.run do |config|
     end
   end
 
+  config.vm.define :ansiarch do |ansi_config|
+    ansi_config.vm.box = "Arch64"
+    ansi_config.vm.host_name = "ansiarch"
+    ansi_config.vm.provision :ansible do |ansible|
+        ansible.playbook = "setup-ansiarch.yml"
+        ansible.hosts = "ansiarch"
+    end
+  end
+
   config.vm.define :Centos6 do |cent_config|
     cent_config.vm.box = "Centos6"
 #    cent_config.vm.network :bridged
