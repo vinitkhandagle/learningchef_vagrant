@@ -1,0 +1,9 @@
+---
+## A Arch linux test
+- hosts: ansiarch
+  user: vagrant
+  sudo: True
+
+  tasks:
+   - name: show the hostname
+     action: command hostname
