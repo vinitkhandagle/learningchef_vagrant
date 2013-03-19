@@ -1,0 +1,22 @@
+---
+## A Arch linux test
+- hosts: ansiubu
+  user: vagrant
+  sudo: True
+
+  tasks:
+   - name: show the hostname
+     action: command hostname
+  
+  tasks:
+   - name: show the Disk Space
+     action: command df -kh
+  
+  tasks:
+   - name: show the Apache Status 
+     action: command /etc/init.d/ssh status
+  
+  tasks:
+   - name: show ntp service
+     action: service name=ssh state=started
+
