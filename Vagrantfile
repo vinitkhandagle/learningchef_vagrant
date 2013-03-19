@@ -27,7 +27,7 @@ Vagrant::Config.run do |config|
     ansi_config.vm.network :bridged, ip: "192.168.1.7"
     ansi_config.vm.host_name = "ansiubu"
     ansi_config.vm.provision :ansible do |ansible|
-        ansible.playbook = "setup-ansiarch.yml"
+        ansible.playbook = "setup-ansiubu.yml"
         ansible.hosts = "ansiubu"
     end
   end
