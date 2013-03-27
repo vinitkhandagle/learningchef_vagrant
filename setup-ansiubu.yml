@@ -20,3 +20,6 @@
    - name: show ntp service
      action: service name=ssh state=started
 
+  tasks:
+   - name: show lsb Release
+     action: command lsb_release -a
