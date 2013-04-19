@@ -23,3 +23,7 @@
   tasks:
    - name: show lsb Release
      action: command lsb_release -a
+  
+  tasks:
+   - name: Install Apache
+     action: apt name=apache2 state=latest
