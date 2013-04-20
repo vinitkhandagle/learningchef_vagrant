@@ -27,3 +27,8 @@
   tasks:
    - name: Install Apache
      action: apt name=apache2 state=latest
+
+  tasks:
+   - name: Check Apache Service 
+     action: service name=apache2 state=running
+
