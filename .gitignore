@@ -1,5 +1,6 @@
 .rake_test_cache
 .vagrant
+.~*
 .chef
 *.gz
 .*.swp
