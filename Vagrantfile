@@ -32,6 +32,12 @@ Vagrant::Config.run do |config|
     end
   end
 
+  config.vm.define :chefserver do |chef_config|
+    chef_config.vm.box = "chef-server"
+    chef_config.vm.host_name = "chefserver"
+    end
+
+
   config.vm.define :Centos6 do |cent_config|
     cent_config.vm.box = "Centos6"
 #    cent_config.vm.network :bridged
