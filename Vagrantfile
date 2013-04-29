@@ -35,6 +35,8 @@ Vagrant::Config.run do |config|
   config.vm.define :chefserver do |chef_config|
     chef_config.vm.box = "chef-server"
     chef_config.vm.host_name = "chefserver"
+    chef_config.vm.network :bridged
+#    chef_config.vm.forward_port 80,8881
     end
 
 
