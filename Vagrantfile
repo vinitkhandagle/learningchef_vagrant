@@ -32,6 +32,19 @@ Vagrant::Config.run do |config|
     end
   end
 
+
+#### Need to Check the Salt Version Installation 
+#  config.vm.define :saltubu do |salt_config|
+#    salt_config.vm.box = "lucid32"
+#    salt_config.vm.synced_folder "srv/", "/srv"
+#    salt_config.vm.host_name = "saltubu"
+#    salt_config.vm.provision :salt do |salt|
+#        salt.minion_config = "srv/minion"
+#        salt.run_highstate = true
+#    end
+#  end
+
+
   config.vm.define :chefserver do |chef_config|
     chef_config.vm.box = "chef-server"
     chef_config.vm.host_name = "chefserver"
