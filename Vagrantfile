@@ -1,3 +1,4 @@
+### VM for CHEF 1 ####
 Vagrant.configure ("1") do |config|
   config.vm.define :lucid do |web_config|
     web_config.vm.box = "lucid32"
@@ -9,4 +10,24 @@ Vagrant.configure ("1") do |config|
         chef.node_name = "vinit_vagrantvm"
       end
     end
+end 
+
+### Arch VM independent of Any CM tool
+
+Vagrant.configure ("1") do |config|
+  config.vm.define :Arch do |arch_config|
+    arch_config.vm.box = "Arch64"
+  end
+end
+
+### Salt CM VM ####
+Vagrant.configure ("2") do |config|
+    config.vm.define :saltubu do |salt_config|
+    salt_config.vm.box = "lucid32"
+    salt_config.vm.synced_folder "srv/", "/srv"
+    salt_config.vm.provision :salt do |salt|
+        salt.minion_config = "srv/minion"
+        salt.run_highstate = true
+    end
+  end
 end
