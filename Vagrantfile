@@ -19,7 +19,16 @@ Vagrant.configure ("1") do |config|
     arch_config.vm.box = "Arch64"
   end
 end
-
+#### Ansible VM ####
+Vagrant.configure ("1") do |config|
+    config.vm.define :ansiubu do |ansi_config|
+    ansi_config.vm.box = "lucid32"
+    ansi_config.vm.provision :ansible do |ansible|
+        ansible.playbook = "setup-ansiubu.yml"
+        ansible.hosts = "ansiubu"
+    end
+  end
+end
 ### Salt CM VM ####
 Vagrant.configure ("2") do |config|
     config.vm.define :saltubu do |salt_config|
@@ -27,6 +36,7 @@ Vagrant.configure ("2") do |config|
     salt_config.vm.synced_folder "srv/", "/srv"
     salt_config.vm.provision :salt do |salt|
         salt.minion_config = "srv/minion"
+        salt.verbose = true
         salt.run_highstate = true
     end
   end
