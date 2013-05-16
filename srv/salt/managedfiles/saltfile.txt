@@ -1,0 +1,1 @@
+This is a salt file to be create
