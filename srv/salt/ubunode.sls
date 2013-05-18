@@ -17,7 +17,7 @@ apache2:
     - pkg: apache2
 
 #### File Addition ####
-/home/vagrant/saltfile.txt
+/home/vagrant/saltfile.txt:
   file.managed:
     - source: salt://managedfiles/saltfile.txt
     - user: vagrant
