@@ -33,11 +33,12 @@ end
 Vagrant.configure ("2") do |config|
     config.vm.define :saltubu do |salt_config|
     salt_config.vm.box = "lucid32"
+    salt_config.vm.network :public_network 
     salt_config.vm.synced_folder "srv/", "/srv"
-    salt_config.vm.provision :salt do |salt|
-        salt.minion_config = "srv/minion"
-        salt.verbose = true
-        salt.run_highstate = true
-    end
+#    salt_config.vm.provision :salt do |salt|
+#        salt.minion_config = "srv/minion"
+#        salt.verbose = true
+#        salt.run_highstate = true
+#    end
   end
 end
