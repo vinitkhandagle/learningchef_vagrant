@@ -1,4 +1,4 @@
-### VM for CHEF 1 #######
+### VM for CHEF 1 #########
 Vagrant.configure ("1") do |config|
   config.vm.define :lucid do |web_config|
     web_config.vm.box = "lucid32"
