@@ -31,4 +31,5 @@
   tasks:
    - name: Check Apache Service 
      action: service name=apache2 state=running
+     try
 
