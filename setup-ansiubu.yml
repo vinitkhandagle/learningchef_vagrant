@@ -1,4 +1,4 @@
----GG
+---
 ## A Arch linux test
 - hosts: ansiubu
   user: vagrant

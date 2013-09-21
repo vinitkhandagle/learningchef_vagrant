@@ -12,23 +12,6 @@ Vagrant.configure ("1") do |config|
     end
 end 
 
-### Arch VM independent of Any CM tool
-
-Vagrant.configure ("1") do |config|
-  config.vm.define :Arch do |arch_config|
-    arch_config.vm.box = "Arch64"
-  end
-end
-#### Ansible VM ####
-Vagrant.configure ("1") do |config|
-    config.vm.define :ansiubu do |ansi_config|
-    ansi_config.vm.box = "lucid32"
-    ansi_config.vm.provision :ansible do |ansible|
-        ansible.playbook = "setup-ansiubu.yml"
-        ansible.hosts = "ansiubu"
-    end
-  end
-end
 ### Salt CM VM ####
 Vagrant.configure ("2") do |config|
     config.vm.define :saltubu do |salt_config|
@@ -42,3 +25,12 @@ Vagrant.configure ("2") do |config|
 #    end
   end
 end
+
+Vagrant.configure("2") do |config|
+    config.vm.define :ansiubu do |ansible|
+     ansible.vm.box = "lucid32"
+     ansible.vm.provision "ansible" do |ansi|
+      ansi.playbook = "setup-ansiubu.yml"
+     end
+    end
+ end
