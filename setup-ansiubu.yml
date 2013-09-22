@@ -1,6 +1,6 @@
 ---
 ## A Arch linux test
-- hosts: ansiubu
+- hosts: all 
   user: vagrant
   sudo: True
 
@@ -31,5 +31,4 @@
   tasks:
    - name: Check Apache Service 
      action: service name=apache2 state=running
-     try
 

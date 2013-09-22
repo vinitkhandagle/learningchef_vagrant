@@ -30,7 +30,7 @@ Vagrant.configure("2") do |config|
     config.vm.define :ansiubu do |ansible|
      ansible.vm.box = "lucid32"
      ansible.vm.provision "ansible" do |ansi|
-      ansi.playbook = "setup-ansiubu.yml"
+      ansi.playbook = "./setup-ansiubu.yml"
      end
     end
  end
